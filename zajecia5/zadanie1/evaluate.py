@@ -16,16 +16,17 @@ Y_train = pd.DataFrame(r, columns=["Occupancy"])
 def create_baseline():
     # stworzenie modelu sieci neuronowej
     model = Sequential()
-    # dodanie warstwy wejściowej, ilość neuronów taka jak ilość cech, wagi początkowe losowe,funkcja aktywacji - relu
-    model.add(Dense(X_train.shape[1], input_dim=X_train.shape[1],
-                    kernel_initializer='random_uniform', activation='relu'))
-    # warstwa wyjściowa, funkcja aktywacji - sigmoid
-    model.add(Dense(1, kernel_initializer='random_uniform', activation='sigmoid'))
-    # stworzenie optymizera stochastic gradient descent
-    sgd = optimizers.SGD(lr=0.01, clipnorm=0.01)
+    # dodanie jednego neuronu, wejście do tego neuronu to ilość cech, funkcja aktywacji sigmoid, początkowe wartości wektorów to zero.
+    model.add(Dense(1, input_dim=X_train.shape[1], activation='sigmoid', kernel_initializer='zeros'))
+    # stworzenie funkcji kosztu stochastic gradient descent
+    sgd = optimizers.SGD(lr=0.1)
     # kompilacja modelu
     model.compile(loss='binary_crossentropy',
                   optimizer=sgd, metrics=['accuracy'])
+
+    # rysowanie architektury sieci, jeżeli ktoś ma zainstalowane odpowiednie biblioteki
+    # from keras.utils import plot_model
+    # plot_model(model, to_file='model.png')
     return model
 
 
