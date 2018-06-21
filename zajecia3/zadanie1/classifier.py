@@ -201,3 +201,4 @@ class Bayes_laplac(Bayes):
                 return ((alfa + cls.ham_words_dict[word]) / (beta + cls.total_number)) * (cls.apriori_ham / cls.apriori_spam)
             else:
                 return ((alfa + 0) / (beta + cls.total_number)) * (cls.apriori_ham / cls.apriori_spam)
+#
