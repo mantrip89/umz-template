@@ -1,46 +1,49 @@
 lista najczęstszych słów dla ham:
-
+for, is, the, and, a, of, you, on, in, to
 lista najczęstszych słów dla spam:
+in, the, and, a, you, for, of, your, is, to
+
 
 zero rule:
-accuracy:
-sensivity:
-specifity
-precision:
+accuracy:	 0.5071174377224199
+sensivity:	 1.0
+specifity:	 0.0
+precision:	 0.5071174377224199
 
 
 Bayes
-accuracy:
-sensivity:
-specifity
-precision:
-
+accuracy:	 0.8232502965599051
+sensivity:	 0.6693548387096774
+specifity:	 0.33064516129032256
+precision:	 0.981418918918919
 
 
 Bayes + stemmer lancester:
-accuracy:
-sensivity:
-specifity
-precision:
+accuracy:	 0.8623962040332147
+sensivity:	 0.7401259301659988
+specifity:	 0.25987406983400113
+precision:	 0.9923254029163469
 
 
 Bayes + stemmer porter:
-accuracy:
-sensivity:
-specifity
-precision:
+accuracy:	 0.8499406880189798
+sensivity:	 0.7073313782991202
+specifity:	 0.29266862170087976
+precision:	 0.9942291838417148
+
+
 
 Bayes + stemmer snowball:
-accuracy:
-sensivity:
-specifity
-precision:
+accuracy:	 0.8448991696322657
+sensivity:	 0.6990990990990991
+specifity:	 0.3009009009009009
+precision:	 0.9814502529510961
 
 
 Bayes + laplac:
-alfa:
-beta:
-accuracy:
-sensivity:
-specifity
-precision:
+alfa:		0.1
+beta:		0.5
+accuracy:	 0.8609134045077106
+sensivity:	 0.7338709677419355
+specifity:	 0.2661290322580645
+precision:	 0.994535519125683
