@@ -46,6 +46,35 @@ class Bayes(classifier):
         cls.set_all_words_probs()
 
     @classmethod
+    def save_most_common_words(cls, data_set):
+        cls.spam_words_dict = dict()
+        cls.ham_words_dict = dict()
+        cls.set_apriori(data_set)
+        for email in data_set:
+            if email.is_spam:
+                cls.add_tokens_to_dict(email, cls.spam_words_dict)
+            else:
+                cls.add_tokens_to_dict(email, cls.ham_words_dict)
+            cls.print_progress(data_set)
+
+        # save most common words
+        file_to_save = open('most_common_words', 'w')       
+        
+        most_common_ham_words = sorted(cls.ham_words_dict.items(), key=lambda x: x[1], reverse=True)       
+        file_to_save.write('Lista najczestszych slow dla ham:\n')
+        for word in most_common_ham_words[:10]:
+            file_to_save.write(str(word[0]) + ' - ' + str(word[1]) + '\n')
+
+        file_to_save.write('\n')
+
+        most_common_spam_words = sorted(cls.spam_words_dict.items(), key=lambda x: x[1], reverse=True)
+        file_to_save.write('Lista najczestszych slow dla spam:\n')
+        for word in most_common_spam_words[:10]:
+            file_to_save.write(str(word[0]) + ' - ' + str(word[1]) + '\n')
+
+        file_to_save.close()
+
+    @classmethod
     def predict(cls, data_set):
         preds = []
         progress = 0
@@ -131,7 +160,6 @@ class Bayes(classifier):
                 p = p * (1 - word_list[i])
         return p
 
-
 class Bayes_stemmed(Bayes):
     @classmethod
     def add_tokens_to_dict(cls, email, word_dict):
@@ -145,21 +173,17 @@ class Bayes_stemmed(Bayes):
             else:
                 word_dict[word] = 1
 
-
 class Bayes_stemmed_porter(Bayes_stemmed):
 
     STEMMER = PorterStemmer()
-
 
 class Bayes_stemmed_lancester(Bayes_stemmed):
 
     STEMMER = LancasterStemmer()
 
-
 class Bayes_stemmed_snowball(Bayes_stemmed):
 
     STEMMER = SnowballStemmer('english')
-
 
 class Bayes_laplac(Bayes):
     @classmethod
