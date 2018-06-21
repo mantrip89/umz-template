@@ -1,13 +1,30 @@
 TRAIN SET- NO DEPTH RESTRAIN
-accuracy:
+accuracy:0.9947916666666666
 
 TEST SET- NO DEPTH RESTRAIN
-accuracy:
+accuracy:0.7727272727272727
 
 TRAIN SET- MAX DEPTH 4
-accuracy:
+accuracy:0.8697916666666666
 
 TEST SET- MAX DEPTH 4
-accuracy:
+accuracy:0.7727272727272727
 
 YOUR OWN FOREST PARAMETERS:
+clf = RandomForestClassifier(oob_score= False, n_estimators=5)
+TRAIN SET
+[[62  0  1  0  0  0]
+ [ 2 66  0  0  0  0]
+ [ 0  2 14  0  0  1]
+ [ 0  0  0 11  1  0]
+ [ 0  1  0  0  6  0]
+ [ 0  0  0  0  0 25]]
+0.9583333333333334
+TEST SET
+[[5 1 2 0 0 0]
+ [1 6 0 1 0 0]
+ [0 0 0 0 0 0]
+ [0 0 0 1 0 0]
+ [0 0 0 0 2 0]
+ [0 0 0 0 0 3]]
+0.7727272727272727
