@@ -19,10 +19,10 @@ def create_baseline():
     # dodanie jednego neuronu, wejście do tego neuronu to ilość cech, funkcja aktywacji sigmoid, początkowe wartości wektorów to zero.
     model.add(Dense(1, input_dim=X_train.shape[1], activation='sigmoid', kernel_initializer='zeros'))
     # stworzenie funkcji kosztu stochastic gradient descent
-    sgd = optimizers.SGD(lr=0.1)
+    #sgd = optimizers.SGD(lr=0.1)
     # kompilacja modelu
     model.compile(loss='binary_crossentropy',
-                  optimizer=sgd, metrics=['accuracy'])
+                  optimizer='adam', metrics=['accuracy'])
 
     # rysowanie architektury sieci, jeżeli ktoś ma zainstalowane odpowiednie biblioteki
     # from keras.utils import plot_model
@@ -56,4 +56,16 @@ print((predictions_dev == Y_dev).mean())
 
 with open(os.path.join("dev-0", "out.tsv"), 'w') as file:
     for prediction in predictions_dev:
+        file.write(str(prediction[0]) + '\n')
+
+r_test = pd.read_csv(os.path.join("test-A", "in.tsv"), header=None, names=[
+                "date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"], sep='\t')
+X_test = pd.DataFrame(
+    r_test, columns=["Temperature", "Humidity", "Light", "CO2", "HumidityRatio"])
+
+predictions_test = estimator.predict(X_test)
+
+
+with open(os.path.join("test-A", "out.tsv"), 'w') as file:
+    for prediction in predictions_test:
         file.write(str(prediction[0]) + '\n')
