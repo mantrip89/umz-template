@@ -1,0 +1,26 @@
+-DANE TRENINGOWE-
+ROZKŁAD PRÓBY TRENIGOWEJ: 0.2123296082524868
+True Positives: 1176
+True Negatives: 6161
+False Positives: 253
+False Negatives: 553
+-MACIERZ BŁĘDU-
+[[6161  553]
+ [ 253 1176]]
+Accuracy, specificity and sensitivity 
+Accuracy: 0.9010192803635024
+Specificity: 0.9605550358590583
+Sensitivity: 0.680161943319838
+-DANE DEWELOPERSKIE-
+ZERO RULE NA ZBIORZE DEWELOPERSKIM: 0.6690431519699813
+True Positives: 758
+True Negatives: 1569
+False Positives: 124
+False Negatives: 214
+-MACIERZ BŁĘDU-
+[[1569  214]
+ [ 124  758]]
+Accuracy, specificity and sensitivity 
+Accuracy: 0.8731707317073171
+Specificity: 0.9267572356763142
+Sensitivity: 0.779835390946502
