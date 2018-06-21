@@ -93,7 +93,7 @@ f.write('False Negatives: ')
 f.write(str(FN))
 f.write('\n')
 
-f.write('----------Macierz błędu---------- \n')
+f.write('-MACIERZ BŁĘDU- \n')
 f.write(str(confusion_matrix(lr.predict(dev_data.CO2.values.reshape(-1,1)), dev_data_expected.y)))
 f.write('\n')
 f.write('Accuracy, specificity and sensitivity \n')
@@ -115,7 +115,7 @@ f.close()
 
 sns.regplot(x=dev_data.CO2, y=dev_data_expected.y, logistic=True, y_jitter=.1)
 #plt.show()
-plt.savefig('wykres_regresji_log')
+plt.savefig('wykres_regresji')
 
 prediction = lr.predict(dev_data.CO2.values.reshape(-1,1))
 
