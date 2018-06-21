@@ -1,0 +1,26 @@
+-DANE TRENINGOWE-
+ROZKLAD PROBY TRENIGOWEJ: 0.6932270916334662
+True Positives: 174
+True Negatives: 0
+False Positives: 77
+False Negatives: 0
+-MACIERZ BLEDU-
+[[  0   0]
+ [ 77 174]]
+Accuracy, specificity and sensitivity 
+Accuracy: 0.6932270916334662
+Specificity: 0.0
+Sensitivity: 1.0
+-DANE DEWELOPERSKIE- 
+ZERO RULE NA ZBIORZE DEWELOPERSKIM: 0.48
+True Positives: 26
+True Negatives: 0
+False Positives: 24
+False Negatives: 0
+-MACIERZ BLEDU-
+[[ 0  0]
+ [24 26]]
+Accuracy, specificity and sensitivity 
+Accuracy: 0.52
+Specificity: 0.0
+Sensitivity: 1.0
