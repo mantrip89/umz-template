@@ -33,7 +33,7 @@ def baseline_model():
     return model
 
 # fix random seed for reproducibility
-seed = 6
+seed = 7
 #numpy.random.seed(seed)
 # evaluate model with standardized dataset
 #estimator = KerasRegressor(build_fn=baseline_model, epochs=100, batch_size=5, verbose=0)
